@@ -42,11 +42,14 @@ calcularNivelDePelea habilidades = sum(map length habilidades)
 }deriving(Show,Eq)
 -}
 --Punto 3
+{-
 listaDeColores :: [String]
 listaDeColores =["Rojo","Verde","Negro"]
 
 formarEquipoRanger ::[Persona] ->[String] -> [PowerRanger]
 formarEquipoRanger personas listaDeColores = map(convertirEnPowerRanger listaDeColores)(filter esBuena personas)
+-}
+
 
 --convertirEnPowerRanger :: Persona -> String -> PowerRanger
 --convertirEnPowerRanger persona colorPedido = UnPowerRanger colorPedido (agregarHabilidad (habilidad persona) colorPedido) (length(habilidad persona))
