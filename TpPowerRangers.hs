@@ -35,27 +35,22 @@ calcularNivelDePelea :: [String] -> Int
 calcularNivelDePelea habilidades = sum(map length habilidades)
 --calcularNivelDePelea = sum.map length
 
-{-data PowerRanger = UnPowerRanger{
-    color :: String,
-    powerHabilidades :: [String],
-    nivelDePelea :: Int
-}deriving(Show,Eq)
--}
 --Punto 3
-{-
+
 listaDeColores :: [String]
 listaDeColores =["Rojo","Verde","Negro"]
 
 formarEquipoRanger ::[Persona] ->[String] -> [PowerRanger]
-formarEquipoRanger personas listaDeColores = map(convertirEnPowerRanger listaDeColores)(filter esBuena personas)
+formarEquipoRanger personas listaDeColores = zipWith convertirEnPowerRanger listaDeColores (filter esBuena personas)
+
+
+{-
+convertirEnPowerRanger :: Persona -> String -> PowerRanger
+convertirEnPowerRanger persona colorPedido = UnPowerRanger colorPedido (agregarHabilidad (habilidad persona) colorPedido) (length(habilidad persona))
+
+encontrarColorDePower :: String -> PowerRanger
+encontrarColorDePower colorPedido = head(filter(\powerRanger -> colorPedido == color powerRanger) listaPowerRangers)
+
+agregarHabilidad :: String -> String -> [String]
+agregarHabilidad habilidad colorPedido = ("Super" ++ habilidad) : powerHabilidad(encontrarColorDePower colorPedido)
 -}
-
-
---convertirEnPowerRanger :: Persona -> String -> PowerRanger
---convertirEnPowerRanger persona colorPedido = UnPowerRanger colorPedido (agregarHabilidad (habilidad persona) colorPedido) (length(habilidad persona))
-
---encontrarColorDePower :: String -> PowerRanger
---encontrarColorDePower colorPedido = head(filter(\powerRanger -> colorPedido == color powerRanger) listaPowerRangers)
-
---agregarHabilidad :: String -> String -> [String]
---agregarHabilidad habilidad colorPedido = ("Super" ++ habilidad) : powerHabilidad(encontrarColorDePower colorPedido)
