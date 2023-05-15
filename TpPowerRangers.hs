@@ -40,8 +40,16 @@ calcularNivelDePelea habilidades = sum(map length habilidades)
 listaDeColores :: [String]
 listaDeColores =["Rojo","Verde","Negro"]
 
+listaDePersonas :: [Persona]
+listaDePersonas = [fran, luca, fede, gaston]
+
 formarEquipoRanger ::[Persona] ->[String] -> [PowerRanger]
 formarEquipoRanger personas listaDeColores = zipWith convertirEnPowerRanger listaDeColores (filter esBuena personas)
+--Punto 4
+--findOrElse :: esBuena -> color -> [PowerRanger] -> Bool
+--findOrElse condicion valor lista
+--    | any color (formarEquipoRanger listaDePersonas listaDeColores) 
+--    | otherwise = valor
 
 
 {-
